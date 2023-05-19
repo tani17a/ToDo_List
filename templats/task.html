@@ -1,0 +1,61 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  </head>
+  <style>
+    body{ background-image:url(https://source.unsplash.com/O5XJoxrYbQo);background-repeat: no-repeat;
+      background-size:cover ;}
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg Text-center ">
+        <div class="container-fluid my-4 ">
+         {% comment %}  <a class="navbar-brand fs-4" href="#">ToDo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>  {% endcomment %}
+          </button>
+          <div class="container text-center">
+          <div class="collapse navbar-collapse text-center  " id="navbarSupportedContent">
+           
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 ">
+              <li class="nav-item mx-5">
+                <a class="nav-link " aria-current="page" href="/home">Home</a>
+              </li>
+              <li class="nav-item mx-1">
+                <a class="nav-link active " href="/task">Task</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </nav>
+ <div class="container text-center ">
+    <h1 class="text-center mx-5 fs-1 mb-5">All Tasks</h1>
+    <table class="table mx-5 table-borderless">
+        <thead>
+          <tr class="fs-4">
+            <th scope="col">S.No</th>
+            <th scope="col">Task</th>
+            <th scope="col">Description</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for count in tasks %}
+          <tr class="fs-5">
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{count.Tittle}}</td>
+            <td>{{count.Description}}</td>
+            <td>{{count.Time}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+</html>
